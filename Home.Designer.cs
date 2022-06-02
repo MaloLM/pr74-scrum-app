@@ -1,6 +1,6 @@
 ﻿namespace pr74_scrum_app
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

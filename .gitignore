@@ -5,9 +5,6 @@
 /tmp
 /out-tsc
 obj/
-pr74-scrum-app.sln
-pr74-scrum-app.csproj.user
-pr74-scrum-app.csproj
 bin/
 # dependencies
 /node_modules

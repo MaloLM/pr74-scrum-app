@@ -39,6 +39,19 @@ namespace pr74_scrum_app
                 return reader; //retrun null
             }
         }
+
+        public void ExecuteFixtureQuery(String query)
+        {
+            String cs = ConfigurationManager.AppSettings["connectionString"];
+            MySqlConnection connection = new MySqlConnection(cs);
+
+            connection.Open();
+            cmd = connection.CreateCommand();
+
+            cmd.CommandText = query;
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
     
         //close databse connection
         public void Close()

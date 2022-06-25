@@ -17,6 +17,15 @@ namespace pr74_scrum_app
             Database db = new Database();
             db.Connect();
 
+            Fixtures fixtures = new Fixtures();
+            fixtures.CreateUsers();
+            fixtures.CreateProjects();
+            fixtures.CreateMembers();
+            fixtures.CreateSprints();
+            fixtures.createUserStories();
+            fixtures.createUserStoryComments();
+            fixtures.createUserStoryMembers();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new HomeForm());

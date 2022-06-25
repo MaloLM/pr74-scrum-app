@@ -35,10 +35,10 @@ namespace pr74_scrum_app
         {
             string[] projectsName = { "Scrum", "IHM", "RSA", "AES", "Inscription", "Facturation", "Alexa", "Voyages" };
 
-            String queryModel = "INSERT INTO project (id, name, description, archived) VALUE({0}, '{1}', '{2}', '{3}')";
+            String queryModel = "INSERT INTO project (id, name, description, archived, pinned) VALUE({0}, '{1}', '{2}', '{3}', {4})";
             for (int i = 1; i <= 15; i++)
             {
-                String query = String.Format(queryModel, i, projectsName[this.random.Next(8)], Faker.Lorem.Paragraph(), random.Next(2) == 0);
+                String query = String.Format(queryModel, i, projectsName[this.random.Next(8)], Faker.Lorem.Paragraph(), random.Next(2) == 0, random.Next(0) == 2);
                 this.db.ExecuteFixtureQuery(query);
             }
         }

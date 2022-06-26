@@ -8,7 +8,7 @@ obj/
 bin/
 packages/
 App.config
-
+.htm
 # dependencies
 /node_modules
 .vs/

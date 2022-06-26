@@ -20,6 +20,10 @@ namespace pr74_scrum_app.Model
             this.user = user;
            assignements = new List<UserStory>();
         }
+        public Member(int id)
+        {
+            this.id = id;
+        }
         public int Id { get { return id; }  set { id = value; }}
         public User User { get { return user; } set { user = value; }}
         public string Role { get { return role; } set { role = value; } }

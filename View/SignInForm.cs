@@ -1,4 +1,5 @@
-﻿using System;
+using pr74_scrum_app.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +24,7 @@ namespace pr74_scrum_app
             if (login.UserLogin(signinpasswordText.Text.Trim(), signinemailText.Text.Trim()))
             {
                 this.Hide();
-                MainForm mp = new MainForm(login.GetUserEmail(),login.GetUserId());
+                ProfilForm mp = new ProfilForm(login.User);
                 mp.ShowDialog();
             }
         }

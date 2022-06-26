@@ -103,8 +103,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\SidebarController.cs" />
+    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Controller\SprintController.cs" />
     <Compile Include="Controller\UserController.cs" />
     <Compile Include="Fixtures\Fixtures.cs" />
+    <Compile Include="Controller\UserStoryController.cs" />
     <Compile Include="Model\Backlog.cs" />
     <Compile Include="Model\Comment.cs" />
     <Compile Include="Model\Database.cs" />
@@ -115,7 +119,19 @@
     <Compile Include="Model\SprintBacklog.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserStory.cs" />
+    <Compile Include="View\Components\ListPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Components\NavBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\Components\Separator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Components\SideBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Components\UserStoryPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\HomeForm.cs">
@@ -126,14 +142,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Components\RoundButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Profildialog\CreateProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Profildialog\CreateProjectForm.Designer.cs">
+      <DependentUpon>CreateProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Profildialog\UpdateInfos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Profildialog\UpdateInfos.Designer.cs">
+      <DependentUpon>UpdateInfos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfilForm.Designer.cs">
+      <DependentUpon>ProfilForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SignInForm.cs">
       <SubType>Form</SubType>
@@ -147,6 +175,18 @@
     <Compile Include="View\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SprintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SprintForm.Designer.cs">
+      <DependentUpon>SprintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserStoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserStoryForm.Designer.cs">
+      <DependentUpon>UserStoryForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,8 +199,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\Profildialog\CreateProjectForm.resx">
+      <DependentUpon>CreateProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Profildialog\UpdateInfos.resx">
+      <DependentUpon>UpdateInfos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfilForm.resx">
+      <DependentUpon>ProfilForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -168,7 +214,56 @@
     <EmbeddedResource Include="View\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SprintForm.resx">
+      <DependentUpon>SprintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserStoryForm.resx">
+      <DependentUpon>UserStoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="packages\BouncyCastle.1.8.5\.signature.p7s" />
+    <None Include="packages\BouncyCastle.1.8.5\BouncyCastle.1.8.5.nupkg" />
+    <None Include="packages\BouncyCastle.1.8.5\README.md" />
+    <None Include="packages\Google.Protobuf.3.19.4\.signature.p7s" />
+    <None Include="packages\Google.Protobuf.3.19.4\Google.Protobuf.3.19.4.nupkg" />
+    <None Include="packages\K4os.Compression.LZ4.1.2.6\.signature.p7s" />
+    <None Include="packages\K4os.Compression.LZ4.1.2.6\K4os.Compression.LZ4.1.2.6.nupkg" />
+    <None Include="packages\K4os.Compression.LZ4.Streams.1.2.6\.signature.p7s" />
+    <None Include="packages\K4os.Compression.LZ4.Streams.1.2.6\K4os.Compression.LZ4.Streams.1.2.6.nupkg" />
+    <None Include="packages\K4os.Hash.xxHash.1.0.6\.signature.p7s" />
+    <None Include="packages\K4os.Hash.xxHash.1.0.6\K4os.Hash.xxHash.1.0.6.nupkg" />
+    <None Include="packages\MySql.Data.8.0.29\.signature.p7s" />
+    <None Include="packages\MySql.Data.8.0.29\MySql.Data.8.0.29.nupkg" />
+    <None Include="packages\System.Buffers.4.5.1\.signature.p7s" />
+    <None Include="packages\System.Buffers.4.5.1\lib\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\lib\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\System.Buffers.4.5.1.nupkg" />
+    <None Include="packages\System.Memory.4.5.4\.signature.p7s" />
+    <None Include="packages\System.Memory.4.5.4\lib\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.4\ref\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.4\System.Memory.4.5.4.nupkg" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\.signature.p7s" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\netcoreapp2.0\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\uap10.0.16299\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinios10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\netcoreapp2.0\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\uap10.0.16299\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinios10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Numerics.Vectors.4.5.0\System.Numerics.Vectors.4.5.0.nupkg" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\.signature.p7s" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\System.Runtime.CompilerServices.Unsafe.5.0.0.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,10 +275,145 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.xml" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\net5.0\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\net5.0\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\net5.0\Google.Protobuf.xml" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\netstandard1.1\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\netstandard1.1\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\netstandard1.1\Google.Protobuf.xml" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\netstandard2.0\Google.Protobuf.dll" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\netstandard2.0\Google.Protobuf.pdb" />
+    <Content Include="packages\Google.Protobuf.3.19.4\lib\netstandard2.0\Google.Protobuf.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\net45\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\net45\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\netstandard1.6\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\netstandard1.6\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\netstandard2.0\K4os.Compression.LZ4.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.1.2.6\lib\netstandard2.0\K4os.Compression.LZ4.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net45\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net45\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\netstandard1.6\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\netstandard1.6\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\netstandard2.0\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\netstandard2.0\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\netstandard2.1\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="packages\K4os.Compression.LZ4.Streams.1.2.6\lib\netstandard2.1\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\net45\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\net45\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\netstandard1.6\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\netstandard1.6\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\netstandard2.0\K4os.Hash.xxHash.dll" />
+    <Content Include="packages\K4os.Hash.xxHash.1.0.6\lib\netstandard2.0\K4os.Hash.xxHash.xml" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net452\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net452\MySql.Data.xml" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net452\Ubiety.Dns.Core.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net452\ZstdNet.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net48\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net48\MySql.Data.xml" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net48\Ubiety.Dns.Core.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net48\ZstdNet.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net5.0\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net5.0\MySql.Data.xml" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net5.0\Ubiety.Dns.Core.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net5.0\ZstdNet.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net6.0\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net6.0\MySql.Data.xml" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net6.0\Ubiety.Dns.Core.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\net6.0\ZstdNet.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.0\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.0\MySql.Data.xml" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.0\Ubiety.Dns.Core.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.0\ZstdNet.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.1\MySql.Data.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.1\MySql.Data.xml" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.1\Ubiety.Dns.Core.dll" />
+    <Content Include="packages\MySql.Data.8.0.29\lib\netstandard2.1\ZstdNet.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\LICENSE.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Buffers.4.5.1\version.txt" />
+    <Content Include="packages\System.Memory.4.5.4\lib\net461\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.4\lib\net461\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.4\LICENSE.TXT" />
+    <Content Include="packages\System.Memory.4.5.4\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Memory.4.5.4\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Memory.4.5.4\version.txt" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard1.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\netstandard2.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\LICENSE.TXT" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net45\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\net46\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard1.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.dll" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\ref\netstandard2.0\System.Numerics.Vectors.xml" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Numerics.Vectors.4.5.0\version.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\Icon.png" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\LICENSE.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\net461\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\net461\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\netstandard2.1\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\ref\netstandard2.1\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\version.txt" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Ressources\high_priority.ico" />
     <Content Include="Ressources\logoScrum.ico" />
+    <Content Include="Ressources\low_priority.ico" />
+    <Content Include="Ressources\medium_priority.ico" />
+    <Content Include="Ressources\pin.ico" />
+    <Content Include="Ressources\proj.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

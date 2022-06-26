@@ -38,7 +38,7 @@ namespace pr74_scrum_app
             string[] projectsName = { "Scrum", "IHM", "RSA", "AES", "Inscription", "Facturation", "Alexa", "Voyages" };
 
             String queryModel = "INSERT INTO project (name, description, archived, pinned) VALUE('{0}', '{1}', {2}, {3})";
-            for (int i = 1; i <= 100; i++)
+            for (int i = 1; i <= 50; i++)
             {
                 String query = String.Format(queryModel, projectsName[this.random.Next(8)], Faker.Lorem.Paragraph(), random.Next(2) == 0, random.Next(2) == 0);
                 this.db.ExecuteFixtureQuery(query);

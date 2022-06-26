@@ -11,6 +11,7 @@ CREATE TABLE `users` (
 CREATE TABLE `Member` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `Project_id` int,
+  `pinned` boolean NULL DEFAULT FALSE,
   `role` varchar(255),
   `user_id` int
 );
@@ -37,7 +38,7 @@ CREATE TABLE `UserStory` (
   `description` varchar(255),
   `complexity` int,
   `priority` int,
-  `state` boolean,
+  `state` varchar(100),
   `sprint_id` int,
   `Project_id` int NOT NULL
 );

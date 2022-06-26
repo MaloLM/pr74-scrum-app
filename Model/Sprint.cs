@@ -12,6 +12,7 @@ namespace pr74_scrum_app.Model
         private string name;
         private DateTime startingDate;
         private DateTime endingDate;
+        private SprintBacklog backlog;
 
         public Sprint(int id, string name, DateTime startingDate, DateTime endingDate)
         {
@@ -24,6 +25,7 @@ namespace pr74_scrum_app.Model
         public string Name { get { return name; } set { name = value; } }
         public DateTime StartingDate { get { return startingDate; } set { startingDate = value; } }
         public DateTime EndingDate { get { return endingDate; } set { endingDate = value; } }
+        public SprintBacklog Backlog { get { return backlog; } set { backlog = value; } }
 
         public bool Equals(Sprint other)
         {

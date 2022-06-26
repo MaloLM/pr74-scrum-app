@@ -2,7 +2,7 @@
 {
     public class ProductBacklog : Backlog
     {
-        public ProductBacklog(int id) : base(id)
+        public ProductBacklog() : base()
         {
         }
     }

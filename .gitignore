@@ -8,6 +8,7 @@ obj/
 bin/
 packages/
 App.config
+.htm
 packages.config
 
 # dependencies

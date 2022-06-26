@@ -18,11 +18,11 @@ namespace pr74_scrum_app
             db.Connect();
 
             Fixtures fixtures = new Fixtures();
-            fixtures.CreateUsers();
-            fixtures.CreateProjects();
-            fixtures.CreateMembers();
-            fixtures.CreateSprints();
-            fixtures.createUserStories();
+            // fixtures.CreateUsers();
+            // fixtures.CreateProjects();
+            // fixtures.CreateMembers();
+            // fixtures.CreateSprints();
+            // fixtures.createUserStories();
             fixtures.createUserStoryComments();
             fixtures.createUserStoryMembers();
 

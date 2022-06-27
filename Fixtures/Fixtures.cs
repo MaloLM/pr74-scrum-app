@@ -28,6 +28,8 @@ namespace pr74_scrum_app
 
                 String query = String.Format(queryModel, firstName, lastName, Faker.Internet.Email(firstName), "123456");
 
+                Console.WriteLine(query);
+
                 this.db.ExecuteFixtureQuery(query);
             }
 
@@ -37,10 +39,10 @@ namespace pr74_scrum_app
         {
             string[] projectsName = { "Scrum", "IHM", "RSA", "AES", "Inscription", "Facturation", "Alexa", "Voyages" };
 
-            String queryModel = "INSERT INTO project (name, description, archived, pinned) VALUE('{0}', '{1}', {2}, {3})";
+            String queryModel = "INSERT INTO project (name, description, archived) VALUE('{0}', '{1}', {2})";
             for (int i = 1; i <= 50; i++)
             {
-                String query = String.Format(queryModel, projectsName[this.random.Next(8)], Faker.Lorem.Paragraph(), random.Next(2) == 0, random.Next(2) == 0);
+                String query = String.Format(queryModel, projectsName[this.random.Next(8)], Faker.Lorem.Paragraph(), random.Next(2) == 0);
                 this.db.ExecuteFixtureQuery(query);
             }
         }
@@ -48,14 +50,16 @@ namespace pr74_scrum_app
         public void CreateMembers()
         {
             string[] roles = { "PO", "SM", "DEV" };
-            String queryModel = "INSERT INTO member (role, user_id, project_id) VALUE('{0}', {1}, {2})";
+            String queryModel = "INSERT INTO member (role, user_id, project_id, pinned) VALUE('{0}', {1}, {2}, {3})";
 
             int  userId = 1, projectId = 1;
             for (int i = 1; i <= 20; i++)
             {
                 for(int y = 0; y < roles.Length; y++)
                 {
-                    String query = String.Format(queryModel, roles[y], userId++, projectId);
+                    Boolean pinned = this.random.Next(2) == 0;
+
+                    String query = String.Format(queryModel, roles[y], userId++, projectId, this.random.Next(2) == 0);
                     this.db.ExecuteFixtureQuery(query);
                 }
                 projectId = projectId + 1;

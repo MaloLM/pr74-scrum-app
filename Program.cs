@@ -19,12 +19,12 @@ namespace pr74_scrum_app
 
             Fixtures fixtures = new Fixtures();
             fixtures.CreateUsers();
-            fixtures.CreateProjects();
-            fixtures.CreateMembers();
-            fixtures.CreateSprints();
-            fixtures.createUserStories();
-            fixtures.createUserStoryComments();
-            fixtures.createUserStoryMembers();
+            // fixtures.CreateProjects();
+            // fixtures.CreateMembers();
+            // fixtures.CreateSprints();
+            // fixtures.createUserStories();
+            // fixtures.createUserStoryComments();
+            // fixtures.createUserStoryMembers();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

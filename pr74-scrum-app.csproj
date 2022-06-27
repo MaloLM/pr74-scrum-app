@@ -220,7 +220,6 @@
     <EmbeddedResource Include="View\UserStoryForm.resx">
       <DependentUpon>UserStoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="packages\BouncyCastle.1.8.5\.signature.p7s" />
     <None Include="packages\BouncyCastle.1.8.5\BouncyCastle.1.8.5.nupkg" />
     <None Include="packages\BouncyCastle.1.8.5\README.md" />

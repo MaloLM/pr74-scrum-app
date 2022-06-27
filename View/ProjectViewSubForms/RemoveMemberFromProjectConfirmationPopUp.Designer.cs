@@ -74,6 +74,7 @@
             this.Controls.Add(this.ConfirmForm);
             this.Controls.Add(this.messageLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "RemoveMemberFromProjectConfirmationPopUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enlever un membre du projet";

@@ -266,6 +266,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProfilForm.resx">
       <DependentUpon>ProfilForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProjectViewSubForms\AddNewSprintForm.resx">
       <DependentUpon>AddNewSprintForm.cs</DependentUpon>
@@ -281,6 +282,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserStoryForm.resx">
       <DependentUpon>UserStoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="packages\BouncyCastle.1.8.5\.signature.p7s" />

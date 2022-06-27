@@ -139,6 +139,8 @@ namespace pr74_scrum_app.View.Components
                 if (ProfilListBox.SelectedItem.ToString() == "Mon profil")
                 {
                     UpdateInfos update = new UpdateInfos(user);
+                    update.FormBorderStyle = FormBorderStyle.FixedDialog;
+                    update.SizeGripStyle = SizeGripStyle.Hide;
                     update.ShowDialog();
                 }
                 if (ProfilListBox.SelectedItem.ToString() == "Déconnexion")

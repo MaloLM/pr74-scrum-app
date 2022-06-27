@@ -116,6 +116,8 @@ namespace pr74_scrum_app.View.Components
                 Parent.Hide();
                 currentProjectId = projectID;
                 ProjectForm home = new ProjectForm(projectID, user.Id);
+                home.FormBorderStyle = FormBorderStyle.FixedDialog;
+                home.SizeGripStyle = SizeGripStyle.Hide;
                 home.ShowDialog();
                 Parent.Show();
             }

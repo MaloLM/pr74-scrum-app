@@ -46,37 +46,37 @@
             // FeatureTitleLabel
             // 
             this.FeatureTitleLabel.AutoSize = true;
-            this.FeatureTitleLabel.Location = new System.Drawing.Point(67, 68);
-            this.FeatureTitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FeatureTitleLabel.Location = new System.Drawing.Point(134, 131);
+            this.FeatureTitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FeatureTitleLabel.Name = "FeatureTitleLabel";
-            this.FeatureTitleLabel.Size = new System.Drawing.Size(38, 13);
+            this.FeatureTitleLabel.Size = new System.Drawing.Size(75, 25);
             this.FeatureTitleLabel.TabIndex = 18;
             this.FeatureTitleLabel.Text = "Intitulé";
             // 
             // formTitle
             // 
             this.formTitle.AutoSize = true;
-            this.formTitle.Location = new System.Drawing.Point(110, 25);
-            this.formTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.formTitle.Location = new System.Drawing.Point(220, 48);
+            this.formTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.formTitle.Name = "formTitle";
-            this.formTitle.Size = new System.Drawing.Size(115, 13);
+            this.formTitle.Size = new System.Drawing.Size(230, 25);
             this.formTitle.TabIndex = 17;
             this.formTitle.Text = "Nouvelle fonctionnalité";
             // 
             // backlogFeatureTitleTextBox
             // 
-            this.backlogFeatureTitleTextBox.Location = new System.Drawing.Point(64, 87);
-            this.backlogFeatureTitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backlogFeatureTitleTextBox.Location = new System.Drawing.Point(128, 167);
+            this.backlogFeatureTitleTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backlogFeatureTitleTextBox.Name = "backlogFeatureTitleTextBox";
-            this.backlogFeatureTitleTextBox.Size = new System.Drawing.Size(192, 20);
+            this.backlogFeatureTitleTextBox.Size = new System.Drawing.Size(380, 31);
             this.backlogFeatureTitleTextBox.TabIndex = 16;
             // 
             // cancelForm
             // 
-            this.cancelForm.Location = new System.Drawing.Point(216, 365);
-            this.cancelForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelForm.Location = new System.Drawing.Point(432, 702);
+            this.cancelForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelForm.Name = "cancelForm";
-            this.cancelForm.Size = new System.Drawing.Size(58, 29);
+            this.cancelForm.Size = new System.Drawing.Size(116, 56);
             this.cancelForm.TabIndex = 15;
             this.cancelForm.Text = "Cancel";
             this.cancelForm.UseVisualStyleBackColor = true;
@@ -86,10 +86,10 @@
             // 
             this.ConfirmForm.BackColor = System.Drawing.Color.SteelBlue;
             this.ConfirmForm.ForeColor = System.Drawing.Color.White;
-            this.ConfirmForm.Location = new System.Drawing.Point(285, 365);
-            this.ConfirmForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConfirmForm.Location = new System.Drawing.Point(570, 702);
+            this.ConfirmForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ConfirmForm.Name = "ConfirmForm";
-            this.ConfirmForm.Size = new System.Drawing.Size(58, 29);
+            this.ConfirmForm.Size = new System.Drawing.Size(116, 56);
             this.ConfirmForm.TabIndex = 14;
             this.ConfirmForm.Text = "Ajouter";
             this.ConfirmForm.UseVisualStyleBackColor = false;
@@ -98,30 +98,30 @@
             // Description
             // 
             this.Description.AutoSize = true;
-            this.Description.Location = new System.Drawing.Point(67, 248);
-            this.Description.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Description.Location = new System.Drawing.Point(134, 477);
+            this.Description.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(60, 13);
+            this.Description.Size = new System.Drawing.Size(120, 25);
             this.Description.TabIndex = 21;
             this.Description.Text = "Description";
             // 
             // ComplexityLevelLabel
             // 
             this.ComplexityLevelLabel.AutoSize = true;
-            this.ComplexityLevelLabel.Location = new System.Drawing.Point(67, 195);
-            this.ComplexityLevelLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ComplexityLevelLabel.Location = new System.Drawing.Point(134, 375);
+            this.ComplexityLevelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ComplexityLevelLabel.Name = "ComplexityLevelLabel";
-            this.ComplexityLevelLabel.Size = new System.Drawing.Size(109, 13);
+            this.ComplexityLevelLabel.Size = new System.Drawing.Size(218, 25);
             this.ComplexityLevelLabel.TabIndex = 22;
             this.ComplexityLevelLabel.Text = "Niveau de complexité";
             // 
             // PriorityLevelLabel
             // 
             this.PriorityLevelLabel.AutoSize = true;
-            this.PriorityLevelLabel.Location = new System.Drawing.Point(67, 125);
-            this.PriorityLevelLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PriorityLevelLabel.Location = new System.Drawing.Point(134, 240);
+            this.PriorityLevelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PriorityLevelLabel.Name = "PriorityLevelLabel";
-            this.PriorityLevelLabel.Size = new System.Drawing.Size(90, 13);
+            this.PriorityLevelLabel.Size = new System.Drawing.Size(181, 25);
             this.PriorityLevelLabel.TabIndex = 23;
             this.PriorityLevelLabel.Text = "Niveau de priorité";
             // 
@@ -133,16 +133,16 @@
             "Basse",
             "Moyenne",
             "Haute"});
-            this.priorityComboBox.Location = new System.Drawing.Point(64, 155);
-            this.priorityComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.priorityComboBox.Location = new System.Drawing.Point(128, 298);
+            this.priorityComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.priorityComboBox.Name = "priorityComboBox";
-            this.priorityComboBox.Size = new System.Drawing.Size(136, 21);
+            this.priorityComboBox.Size = new System.Drawing.Size(268, 33);
             this.priorityComboBox.TabIndex = 24;
             // 
             // complexityLevelNumericUpDown
             // 
-            this.complexityLevelNumericUpDown.Location = new System.Drawing.Point(70, 219);
-            this.complexityLevelNumericUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.complexityLevelNumericUpDown.Location = new System.Drawing.Point(140, 421);
+            this.complexityLevelNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.complexityLevelNumericUpDown.Maximum = new decimal(new int[] {
             10,
             0,
@@ -154,7 +154,7 @@
             0,
             0});
             this.complexityLevelNumericUpDown.Name = "complexityLevelNumericUpDown";
-            this.complexityLevelNumericUpDown.Size = new System.Drawing.Size(58, 20);
+            this.complexityLevelNumericUpDown.Size = new System.Drawing.Size(116, 31);
             this.complexityLevelNumericUpDown.TabIndex = 25;
             this.complexityLevelNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -164,10 +164,10 @@
             // 
             // featureDescription
             // 
-            this.featureDescription.Location = new System.Drawing.Point(70, 275);
-            this.featureDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.featureDescription.Location = new System.Drawing.Point(140, 529);
+            this.featureDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.featureDescription.Name = "featureDescription";
-            this.featureDescription.Size = new System.Drawing.Size(250, 52);
+            this.featureDescription.Size = new System.Drawing.Size(496, 96);
             this.featureDescription.TabIndex = 27;
             this.featureDescription.Text = "";
             // 
@@ -176,20 +176,20 @@
             this.erreurLabel.AutoSize = true;
             this.erreurLabel.BackColor = System.Drawing.Color.White;
             this.erreurLabel.ForeColor = System.Drawing.Color.Red;
-            this.erreurLabel.Location = new System.Drawing.Point(61, 342);
-            this.erreurLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.erreurLabel.Location = new System.Drawing.Point(122, 658);
+            this.erreurLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.erreurLabel.Name = "erreurLabel";
-            this.erreurLabel.Size = new System.Drawing.Size(88, 13);
+            this.erreurLabel.Size = new System.Drawing.Size(179, 25);
             this.erreurLabel.TabIndex = 28;
             this.erreurLabel.Text = "Message d\'erreur";
             this.erreurLabel.Visible = false;
             // 
             // AddFeatureToBacklogForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(394, 412);
+            this.ClientSize = new System.Drawing.Size(788, 792);
             this.Controls.Add(this.erreurLabel);
             this.Controls.Add(this.featureDescription);
             this.Controls.Add(this.complexityLevelNumericUpDown);
@@ -203,7 +203,9 @@
             this.Controls.Add(this.cancelForm);
             this.Controls.Add(this.ConfirmForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddFeatureToBacklogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter une fonctionnalité au backlog";

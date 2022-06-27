@@ -43,47 +43,47 @@
             // StartingDateLabel
             // 
             this.StartingDateLabel.AutoSize = true;
-            this.StartingDateLabel.Location = new System.Drawing.Point(67, 127);
-            this.StartingDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.StartingDateLabel.Location = new System.Drawing.Point(134, 244);
+            this.StartingDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StartingDateLabel.Name = "StartingDateLabel";
-            this.StartingDateLabel.Size = new System.Drawing.Size(75, 13);
+            this.StartingDateLabel.Size = new System.Drawing.Size(147, 25);
             this.StartingDateLabel.TabIndex = 19;
             this.StartingDateLabel.Text = "Date de début";
             // 
             // sprintNameLabel
             // 
             this.sprintNameLabel.AutoSize = true;
-            this.sprintNameLabel.Location = new System.Drawing.Point(67, 68);
-            this.sprintNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.sprintNameLabel.Location = new System.Drawing.Point(134, 131);
+            this.sprintNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sprintNameLabel.Name = "sprintNameLabel";
-            this.sprintNameLabel.Size = new System.Drawing.Size(72, 13);
+            this.sprintNameLabel.Size = new System.Drawing.Size(145, 25);
             this.sprintNameLabel.TabIndex = 18;
             this.sprintNameLabel.Text = "Nom du sprint";
             // 
             // formTitle
             // 
             this.formTitle.AutoSize = true;
-            this.formTitle.Location = new System.Drawing.Point(108, 28);
-            this.formTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.formTitle.Location = new System.Drawing.Point(216, 54);
+            this.formTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.formTitle.Name = "formTitle";
-            this.formTitle.Size = new System.Drawing.Size(79, 13);
+            this.formTitle.Size = new System.Drawing.Size(157, 25);
             this.formTitle.TabIndex = 17;
             this.formTitle.Text = "Nouveau sprint";
             // 
             // sprintNameTextBox
             // 
-            this.sprintNameTextBox.Location = new System.Drawing.Point(64, 87);
-            this.sprintNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sprintNameTextBox.Location = new System.Drawing.Point(128, 167);
+            this.sprintNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sprintNameTextBox.Name = "sprintNameTextBox";
-            this.sprintNameTextBox.Size = new System.Drawing.Size(192, 20);
+            this.sprintNameTextBox.Size = new System.Drawing.Size(380, 31);
             this.sprintNameTextBox.TabIndex = 16;
             // 
             // cancelForm
             // 
-            this.cancelForm.Location = new System.Drawing.Point(193, 256);
-            this.cancelForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelForm.Location = new System.Drawing.Point(386, 492);
+            this.cancelForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelForm.Name = "cancelForm";
-            this.cancelForm.Size = new System.Drawing.Size(58, 29);
+            this.cancelForm.Size = new System.Drawing.Size(116, 56);
             this.cancelForm.TabIndex = 15;
             this.cancelForm.Text = "Cancel";
             this.cancelForm.UseVisualStyleBackColor = true;
@@ -93,10 +93,10 @@
             // 
             this.ConfirmForm.BackColor = System.Drawing.Color.SteelBlue;
             this.ConfirmForm.ForeColor = System.Drawing.Color.White;
-            this.ConfirmForm.Location = new System.Drawing.Point(262, 256);
-            this.ConfirmForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConfirmForm.Location = new System.Drawing.Point(524, 492);
+            this.ConfirmForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ConfirmForm.Name = "ConfirmForm";
-            this.ConfirmForm.Size = new System.Drawing.Size(58, 29);
+            this.ConfirmForm.Size = new System.Drawing.Size(116, 56);
             this.ConfirmForm.TabIndex = 14;
             this.ConfirmForm.Text = "Ajouter";
             this.ConfirmForm.UseVisualStyleBackColor = false;
@@ -105,31 +105,31 @@
             // startingDateTimePicker
             // 
             this.startingDateTimePicker.CustomFormat = "";
-            this.startingDateTimePicker.Location = new System.Drawing.Point(64, 147);
-            this.startingDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.startingDateTimePicker.Location = new System.Drawing.Point(128, 283);
+            this.startingDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.startingDateTimePicker.MinDate = new System.DateTime(2022, 6, 18, 15, 1, 8, 0);
             this.startingDateTimePicker.Name = "startingDateTimePicker";
-            this.startingDateTimePicker.Size = new System.Drawing.Size(192, 20);
+            this.startingDateTimePicker.Size = new System.Drawing.Size(380, 31);
             this.startingDateTimePicker.TabIndex = 21;
             this.startingDateTimePicker.Value = new System.DateTime(2022, 6, 18, 15, 1, 8, 0);
             // 
             // EndingDateLabel
             // 
             this.EndingDateLabel.AutoSize = true;
-            this.EndingDateLabel.Location = new System.Drawing.Point(67, 188);
-            this.EndingDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EndingDateLabel.Location = new System.Drawing.Point(134, 362);
+            this.EndingDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EndingDateLabel.Name = "EndingDateLabel";
-            this.EndingDateLabel.Size = new System.Drawing.Size(59, 13);
+            this.EndingDateLabel.Size = new System.Drawing.Size(116, 25);
             this.EndingDateLabel.TabIndex = 22;
             this.EndingDateLabel.Text = "Date de fin";
             // 
             // endingDateTimePicker
             // 
-            this.endingDateTimePicker.Location = new System.Drawing.Point(64, 210);
-            this.endingDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.endingDateTimePicker.Location = new System.Drawing.Point(128, 404);
+            this.endingDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.endingDateTimePicker.MinDate = new System.DateTime(2022, 6, 18, 15, 1, 8, 0);
             this.endingDateTimePicker.Name = "endingDateTimePicker";
-            this.endingDateTimePicker.Size = new System.Drawing.Size(192, 20);
+            this.endingDateTimePicker.Size = new System.Drawing.Size(380, 31);
             this.endingDateTimePicker.TabIndex = 23;
             this.endingDateTimePicker.Value = new System.DateTime(2022, 6, 18, 15, 1, 8, 0);
             // 
@@ -138,20 +138,20 @@
             this.erreurLabel.AutoSize = true;
             this.erreurLabel.BackColor = System.Drawing.Color.White;
             this.erreurLabel.ForeColor = System.Drawing.Color.Red;
-            this.erreurLabel.Location = new System.Drawing.Point(39, 236);
-            this.erreurLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.erreurLabel.Location = new System.Drawing.Point(78, 454);
+            this.erreurLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.erreurLabel.Name = "erreurLabel";
-            this.erreurLabel.Size = new System.Drawing.Size(88, 13);
+            this.erreurLabel.Size = new System.Drawing.Size(179, 25);
             this.erreurLabel.TabIndex = 24;
             this.erreurLabel.Text = "Message d\'erreur";
             this.erreurLabel.Visible = false;
             // 
             // AddNewSprintForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(375, 308);
+            this.ClientSize = new System.Drawing.Size(750, 592);
             this.Controls.Add(this.erreurLabel);
             this.Controls.Add(this.endingDateTimePicker);
             this.Controls.Add(this.EndingDateLabel);
@@ -163,7 +163,9 @@
             this.Controls.Add(this.cancelForm);
             this.Controls.Add(this.ConfirmForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddNewSprintForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajouter un sprint au projet";

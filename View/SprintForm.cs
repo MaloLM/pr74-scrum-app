@@ -196,6 +196,8 @@ namespace pr74_scrum_app.View
             LinkLabel l = sender as LinkLabel;
             UserStoryPanel usp = l.Parent as UserStoryPanel;
             UserStoryForm usf = new UserStoryForm(usp.UserStory, member);
+            usf.FormBorderStyle = FormBorderStyle.FixedDialog;
+            usf.SizeGripStyle = SizeGripStyle.Hide;
             usf.ShowDialog();
             ResetSprint();
         }
@@ -209,6 +211,8 @@ namespace pr74_scrum_app.View
         {
             SprintController sc = new SprintController();
             ConfirmationForm cf = new ConfirmationForm("Voulez-vous vraiment archiver le sprint ? Il ne sera plus consultable après confirmation.");
+            cf.FormBorderStyle = FormBorderStyle.FixedDialog;
+            cf.SizeGripStyle = SizeGripStyle.Hide;
             cf.ShowDialog();
             if (cf.Confirmation)
             {

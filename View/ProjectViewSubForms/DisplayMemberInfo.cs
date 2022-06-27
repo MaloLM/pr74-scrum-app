@@ -66,6 +66,8 @@ namespace pr74_scrum_app.View.ProjectViewSubForms
         private void button1_Click(object sender, EventArgs e)
         {
             RemoveMemberFromProjectConfirmationPopUp form = new RemoveMemberFromProjectConfirmationPopUp(this.member, this.projectId);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.SizeGripStyle = SizeGripStyle.Hide;
             form.ShowDialog();
             this.Close();
         }

@@ -107,6 +107,8 @@
             this.Controls.Add(this.cancelForm);
             this.Controls.Add(this.ConfirmForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddNewMemberForm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,10 +35,10 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(301, 70);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cancelButton.Location = new System.Drawing.Point(452, 109);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(77, 36);
+            this.cancelButton.Size = new System.Drawing.Size(116, 56);
             this.cancelButton.TabIndex = 20;
             this.cancelButton.Text = "Annuler";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -48,10 +48,10 @@
             // 
             this.confirmButton.BackColor = System.Drawing.Color.SteelBlue;
             this.confirmButton.ForeColor = System.Drawing.Color.White;
-            this.confirmButton.Location = new System.Drawing.Point(395, 70);
-            this.confirmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.confirmButton.Location = new System.Drawing.Point(592, 109);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(101, 36);
+            this.confirmButton.Size = new System.Drawing.Size(152, 56);
             this.confirmButton.TabIndex = 19;
             this.confirmButton.Text = "Confirmer";
             this.confirmButton.UseVisualStyleBackColor = false;
@@ -60,23 +60,25 @@
             // Message
             // 
             this.Message.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Message.Location = new System.Drawing.Point(27, 26);
+            this.Message.Location = new System.Drawing.Point(40, 41);
+            this.Message.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Message.Name = "Message";
-            this.Message.Size = new System.Drawing.Size(433, 42);
+            this.Message.Size = new System.Drawing.Size(650, 66);
             this.Message.TabIndex = 18;
             this.Message.Text = "blabla";
             this.Message.Click += new System.EventHandler(this.label1_Click);
             // 
             // ConfirmationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 121);
+            this.ClientSize = new System.Drawing.Size(800, 189);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.Message);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
             this.Name = "ConfirmationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);

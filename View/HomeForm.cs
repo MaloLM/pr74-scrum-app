@@ -21,6 +21,8 @@ namespace pr74_scrum_app
         {
             this.Hide(); 
             SignUpForm signUp = new SignUpForm();
+            signUp.FormBorderStyle = FormBorderStyle.FixedDialog;
+            signUp.SizeGripStyle = SizeGripStyle.Hide;
             signUp.ShowDialog();
         }
 
@@ -29,6 +31,8 @@ namespace pr74_scrum_app
         {
             this.Hide(); 
             SignInForm signIn = new SignInForm();
+            signIn.FormBorderStyle = FormBorderStyle.FixedDialog;
+            signIn.SizeGripStyle = SizeGripStyle.Hide;
             signIn.ShowDialog();
         }
         //when cick open form signUp and hide the actual form
@@ -36,6 +40,8 @@ namespace pr74_scrum_app
         {
             this.Hide();
             SignUpForm signUp = new SignUpForm();
+            signUp.FormBorderStyle = FormBorderStyle.FixedDialog;
+            signUp.SizeGripStyle = SizeGripStyle.Hide;
             signUp.ShowDialog();
         }
 

@@ -213,6 +213,7 @@ namespace pr74_scrum_app.View
             controller.PersistComment(newComment, userStory.Id);
             this.Hide();
             UserStoryForm mp = new UserStoryForm(userStory, member);
+            mp.SizeGripStyle = SizeGripStyle.Hide;
             mp.ShowDialog();
         }
 

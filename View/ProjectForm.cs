@@ -143,6 +143,8 @@ namespace pr74_scrum_app
         private void addToMembersButton_Click(object sender, EventArgs e)
         {
             AddNewMemberForm form = new AddNewMemberForm(this.projectId);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.SizeGripStyle = SizeGripStyle.Hide;
             form.ShowDialog();
             refreshForm();
         }
@@ -150,6 +152,8 @@ namespace pr74_scrum_app
         private void addToSprintsButton_Click(object sender, EventArgs e)
         {
             AddNewSprintForm form = new AddNewSprintForm(this.projectId);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.SizeGripStyle = SizeGripStyle.Hide;
             form.ShowDialog();
             refreshForm();
         }
@@ -157,6 +161,8 @@ namespace pr74_scrum_app
         private void addToBacklogButton_Click(object sender, EventArgs e)
         {
             AddFeatureToBacklogForm form = new AddFeatureToBacklogForm(this.projectId);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.SizeGripStyle = SizeGripStyle.Hide;
             form.ShowDialog();
             refreshForm();
         }
@@ -164,6 +170,8 @@ namespace pr74_scrum_app
         private void archiveProjectButton_Click(object sender, EventArgs e)
         {
             ArchiveProjectConfirmationForm form = new ArchiveProjectConfirmationForm(this.projectId);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.SizeGripStyle = SizeGripStyle.Hide;
             form.ShowDialog();
             refreshForm();
         }
@@ -173,6 +181,8 @@ namespace pr74_scrum_app
             RoundButton rb = sender as RoundButton;
             int id = int.Parse(rb.Name);
             UserStoryForm usf = new UserStoryForm(getUserStoryFromList(id), member);
+            usf.FormBorderStyle = FormBorderStyle.FixedDialog;
+            usf.SizeGripStyle = SizeGripStyle.Hide;
             this.Hide();
             usf.ShowDialog();
             refreshForm();
@@ -188,6 +198,8 @@ namespace pr74_scrum_app
             RoundButton rb = sender as RoundButton;
             int id = int.Parse(rb.Name);
             SprintForm sf = new SprintForm(member.Id, id);
+            sf.FormBorderStyle = FormBorderStyle.FixedDialog;
+            sf.SizeGripStyle = SizeGripStyle.Hide;
             this.Hide();
             sf.ShowDialog();
             refreshForm();
@@ -198,6 +210,8 @@ namespace pr74_scrum_app
             RoundButton rb = sender as RoundButton;
             int id = int.Parse(rb.Name);
             DisplayMemberInfo mf = new DisplayMemberInfo(id, project.Id);
+            mf.FormBorderStyle = FormBorderStyle.FixedDialog;
+            mf.SizeGripStyle = SizeGripStyle.Hide;
             mf.ShowDialog();
             refreshForm();
             this.Show();

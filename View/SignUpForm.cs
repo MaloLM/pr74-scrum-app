@@ -30,6 +30,8 @@ namespace pr74_scrum_app
             {
                 this.Hide();//hide the actuel form
                 SignInForm signin = new SignInForm();
+                signin.FormBorderStyle = FormBorderStyle.FixedDialog;
+                signin.SizeGripStyle = SizeGripStyle.Hide;
                 signin.ShowDialog();
             }
         }
@@ -39,6 +41,8 @@ namespace pr74_scrum_app
         {
             this.Hide();
             SignInForm signin = new SignInForm();
+            signin.FormBorderStyle = FormBorderStyle.FixedDialog;
+            signin.SizeGripStyle = SizeGripStyle.Hide;
             signin.ShowDialog();
         }
         //this allow to back to the home page 
@@ -63,6 +67,8 @@ namespace pr74_scrum_app
         {
             this.Hide();
             HomeForm home = new HomeForm();
+            home.FormBorderStyle = FormBorderStyle.FixedDialog;
+            home.SizeGripStyle = SizeGripStyle.Hide;
             home.ShowDialog();
         }
     }

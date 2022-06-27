@@ -154,6 +154,8 @@ namespace pr74_scrum_app
                 if(ProfilListBox.SelectedItem.ToString()=="Mon profil")
                 {
                     UpdateInfos update = new UpdateInfos(user);
+                    update.FormBorderStyle = FormBorderStyle.FixedDialog;
+                    update.SizeGripStyle = SizeGripStyle.Hide;
                     update.ShowDialog();
                 }
                 if(ProfilListBox.SelectedItem.ToString() == "Déconnexion")
@@ -179,6 +181,8 @@ namespace pr74_scrum_app
         private void CreateProjetButton_Click(object sender, EventArgs e)
         {
             CreatePojetForm create = new CreatePojetForm(user);
+            create.FormBorderStyle = FormBorderStyle.FixedDialog;
+            create.SizeGripStyle = SizeGripStyle.Hide;
             create.ShowDialog();
             Refresh_content();
             RefreshForm();
@@ -274,6 +278,8 @@ namespace pr74_scrum_app
         {
             this.Hide();
             ProjectForm projectform = new ProjectForm(projects[i].Id, user.Id);
+            projectform.FormBorderStyle = FormBorderStyle.FixedDialog;
+            projectform.SizeGripStyle = SizeGripStyle.Hide;
             projectform.ShowDialog();
             Refresh_content();
             RefreshForm();
@@ -317,6 +323,8 @@ namespace pr74_scrum_app
             UserController userController = new UserController();
             this.Hide();
             SprintForm sprintform = new SprintForm(userController.GetMember(this.user).Id, sprints[i].Id);
+            sprintform.FormBorderStyle = FormBorderStyle.FixedDialog;
+            sprintform.SizeGripStyle = SizeGripStyle.Hide;
             sprintform.ShowDialog();
             Refresh_content();
             RefreshForm();
@@ -360,6 +368,8 @@ namespace pr74_scrum_app
         {
             UserController userController = new UserController();
             UserStoryForm sprintform = new UserStoryForm(tasks[i], userController.GetMember(this.user));
+            sprintform.FormBorderStyle = FormBorderStyle.FixedDialog;
+            sprintform.SizeGripStyle = SizeGripStyle.Hide;
             sprintform.ShowDialog();
             this.Show();
             this.Refresh_content();
@@ -412,6 +422,8 @@ namespace pr74_scrum_app
             {
                 this.Hide();
                 ProjectForm projectform = new ProjectForm(searchproject[ResearchProjectcomboBox.SelectedIndex].Id, user.Id);
+                projectform.FormBorderStyle = FormBorderStyle.FixedDialog;
+                projectform.SizeGripStyle = SizeGripStyle.Hide;
                 projectform.ShowDialog();
                 ResearchProjectcomboBox.SelectedIndex = -1;
                 Refresh_content();

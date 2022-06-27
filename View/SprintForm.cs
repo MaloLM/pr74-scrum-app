@@ -1,6 +1,7 @@
 ﻿using pr74_scrum_app.Controller;
 using pr74_scrum_app.Model;
 using pr74_scrum_app.View.Components;
+using pr74_scrum_app.View.ProjectViewSubForms;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -28,6 +29,10 @@ namespace pr74_scrum_app.View
             projectNameLabel.Text = sprint.Name;
             GenerateUserStoryPanels(sprint.Backlog.UserStories);
             member = uc.GetMemberById(memberId);
+            if(member.Role != "SM")
+            {
+                archiveButton.Visible = false;
+            }
 
             NavBar navBar = new NavBar(member.User);
             SideBar sideBar = new SideBar(member.User);
@@ -195,5 +200,21 @@ namespace pr74_scrum_app.View
             ResetSprint();
         }
 
+        private void returnButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void archiveButton_Click(object sender, EventArgs e)
+        {
+            SprintController sc = new SprintController();
+            ConfirmationForm cf = new ConfirmationForm("Voulez-vous vraiment archiver le sprint ? Il ne sera plus consultable après confirmation.");
+            cf.ShowDialog();
+            if (cf.Confirmation)
+            {
+                sc.ArchiverSprint(sprint);
+                this.Close();
+            }
+        }
     }
 }

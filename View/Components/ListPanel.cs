@@ -6,7 +6,8 @@ namespace pr74_scrum_app.View
     class ListPanel : Panel
     {
         private int elementHeight;
-        private List<Control> listControls;  
+        private List<Control> listControls;
+        private int spaceBetweenElements;
         public ListPanel() : base()
         {
             listControls = new List<Control>();
@@ -35,7 +36,7 @@ namespace pr74_scrum_app.View
         public void Format(Control c)
         {
             int width = Size.Width;
-            c.Size = new System.Drawing.Size((width-14), elementHeight);
+            c.Size = new System.Drawing.Size((width-30), elementHeight);
             c.Location = new System.Drawing.Point(7, generateYPosition()+10);
         }
         public void RefreshControls()
@@ -56,9 +57,11 @@ namespace pr74_scrum_app.View
             Controls.Clear();
             listControls.Clear();
         }
+        public int ElementsHigh { get { return elementHeight; } set { elementHeight = value; } }
+        public int SpaceBetweenElements { get { return spaceBetweenElements; } set { spaceBetweenElements = value; } }
         private int generateYPosition()
         {
-            return Controls.Count * elementHeight;
+            return (Controls.Count * elementHeight) + (Controls.Count * spaceBetweenElements);
         }
     }
 }

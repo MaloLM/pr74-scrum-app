@@ -68,11 +68,11 @@ namespace pr74_scrum_app.View
             listBox1.ValueMember = "Key";
             listBox1.SelectedIndex = -1;
 
-            label1.Text = userStory.Name;
-            this.roundButton2.Text = userStory.State;
+            textBox2.Text = userStory.Name;
             this.roundButton3.Text = shortAssignees;
-            this.comboBox1.SelectedIndex = 3 - userStory.Priority;
-            setPriorityImage(userStory.Priority);
+            this.comboBox1.SelectedIndex = userStory.Priority - 1;
+            this.comboBox2.SelectedIndex = userStory.State == "TODO" ? 0 : (userStory.State == "REVIEW" ? 1 : (userStory.State == "PROGRESS" ? 2 : 3));
+            setPriorityImage(comboBox1.SelectedIndex);
             this.textBox3.Text = userStory.Complexity.ToString();
             this.textBox4.Text = userStory.Description;
             generateCommentList(userStory.Comments);
@@ -91,11 +91,11 @@ namespace pr74_scrum_app.View
 
         private void setPriorityImage(int priority)
         {
-            if (priority == 1)
+            if (priority == 2)
             {
                 this.pictureBox2.Image = Image.FromFile("../../Ressources/low_priority.ico");
             }
-            else if (priority == 2)
+            else if (priority == 1)
             {
                 this.pictureBox2.Image = Image.FromFile("../../Ressources/medium_priority.ico");
             }
@@ -153,9 +153,9 @@ namespace pr74_scrum_app.View
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = 3 - comboBox1.SelectedIndex;
+            int index = comboBox1.SelectedIndex;
             setPriorityImage(index);
-            userStory.Priority = index;
+            userStory.Priority = index + 1;
         }
 
         private void generateCommentList(List<Comment> comments)
@@ -189,8 +189,8 @@ namespace pr74_scrum_app.View
                 text.BorderStyle = BorderStyle.None;
 
                 Label date = new Label();
-                date.Text = String.Format("{0}", comments.ElementAt(i).Date);
-                date.Left = 200;
+                date.Text = comments.ElementAt(i).Date.ToString("yyyy/MM/dd-HH:mm");
+                date.Left = 170;
                 date.Top = 40 + i * 60 + addY + nbLine * 11;
                 date.BackColor = Color.Transparent;
 
@@ -214,6 +214,41 @@ namespace pr74_scrum_app.View
             this.Hide();
             UserStoryForm mp = new UserStoryForm(userStory, member);
             mp.ShowDialog();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "Commenter ici")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            userStory.Name = textBox2.Text;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    userStory.State = "TODO";
+                    break;
+                case 1:
+                    userStory.State = "REVIEW";
+                    break;
+                case 2:
+                    userStory.State = "PROGRESS";
+                    break;
+                case 3:
+                    userStory.State = "DONE";
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -28,7 +28,20 @@ namespace pr74_scrum_app.Model
         public User User { get { return user; } set { user = value; }}
         public string Role { get { return role; } set { role = value; } }
         public List<UserStory> Assignements { get { return assignements; } set {assignements = value;} }
-
+        public string getFullRole()
+        {
+            switch (Role)
+            {
+                case "SM":
+                    return "Scrum Master";
+                case "PO":
+                    return "Product owner";
+                case "DEV":
+                    return "Standard";
+                default:
+                    return "None";
+            }
+        }
         public bool Equals(Member other)
         {
             return id == other.id;

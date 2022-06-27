@@ -90,9 +90,9 @@ namespace pr74_scrum_app
             this.ErrorLabel.ForeColor = System.Drawing.Color.Red;
             this.ErrorLabel.Location = new System.Drawing.Point(159, 227);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(199, 17);
+            this.ErrorLabel.Size = new System.Drawing.Size(207, 17);
             this.ErrorLabel.TabIndex = 28;
-            this.ErrorLabel.Text = "Veillez remplir tout les champs";
+            this.ErrorLabel.Text = "Veuillez remplir tout les champs";
             this.ErrorLabel.Visible = false;
             // 
             // label1

@@ -270,23 +270,33 @@ namespace pr74_scrum_app
         }
 
         //action when user click on one project 
+        private void Reload_showProject(int i)
+        {
+            this.Hide();
+            ProjectForm projectform = new ProjectForm(projects[i].Id, user.Id);
+            projectform.ShowDialog();
+            Refresh_content();
+            RefreshForm();
+            this.Show();
+
+        }
         private void OnItemProjectLabel_click(object sender)
         {
             Label controler = sender as Label;
             int i = projectLabels.IndexOf(controler);
-            Console.WriteLine("label " + projects[i].Name + " " + projects[i].Id);
+            Reload_showProject(i);
         }
         private void OnItemProjectBouton_click(object sender)
         {
             View.RoundButton controler = sender as View.RoundButton;
             int i = roudboutonProjects.IndexOf(controler);
-            Console.WriteLine("roundBouton " + projects[i].Name + " " + projects[i].Id);
+            Reload_showProject(i);
         }
         private void OnItemProjectPic_click(object sender)
         {
             PictureBox controler = sender as PictureBox;
             int i = ProjectPictureBoxs.IndexOf(controler);
-            Console.WriteLine("pic " + projects[i].Name + " " + projects[i].Id);
+            Reload_showProject(i);
         }
         private void ProjectLabel1_Click(object sender, EventArgs e){OnItemProjectLabel_click(sender);}
         private void ProjectRoundButton1_Click(object sender, EventArgs e){OnItemProjectBouton_click(sender);}
@@ -308,8 +318,10 @@ namespace pr74_scrum_app
             this.Hide();
             SprintForm sprintform = new SprintForm(userController.GetMember(this.user).Id, sprints[i].Id);
             sprintform.ShowDialog();
+            Refresh_content();
+            RefreshForm();
             this.Show();
-            this.Refresh_content();
+            
         }
         private void OnItemSprintLabel_click(object sender)
         {
@@ -398,8 +410,13 @@ namespace pr74_scrum_app
         {
             if (ResearchProjectcomboBox.SelectedIndex > -1)
             {
-                //send this to neew form
-                Console.WriteLine("label " + searchproject[ResearchProjectcomboBox.SelectedIndex].Name + " " + searchproject[ResearchProjectcomboBox.SelectedIndex].Id);
+                this.Hide();
+                ProjectForm projectform = new ProjectForm(searchproject[ResearchProjectcomboBox.SelectedIndex].Id, user.Id);
+                projectform.ShowDialog();
+                ResearchProjectcomboBox.SelectedIndex = -1;
+                Refresh_content();
+                RefreshForm();
+                this.Show();
             }
         }
 

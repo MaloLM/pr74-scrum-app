@@ -20,6 +20,15 @@ namespace pr74_scrum_app
             this.password = password;
             this.email = email;
         }
+
+        public User(int id, string firstName, string lastName, string email)
+        {
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.password = "";
+            this.email = email;
+        }
         public User(int id)
         {
             this.id = id;

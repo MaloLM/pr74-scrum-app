@@ -76,13 +76,54 @@ namespace pr74_scrum_app.Controller
 
             return userStory;
         }
+
+        public List<UserStory> FetchUserStoriesByProjectID(int projectId)
+        { 
+            List<UserStory> userStories = new List<UserStory>();
+
+            string sql = $"select * from UserStory where Project_id={projectId}"; // get product backlock
+
+            MySqlDataReader dr = Database.ExecutQuery(sql);
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    int id = (int)dr["id"];
+                    string name = (string)dr["name"];
+                    string description = (string)dr["description"];
+                    int complexity = (int)dr["complexity"];
+                    int priotity = (int)dr["priority"];
+                    string state = (string)dr["state"];
+                    UserStory userStory = new UserStory(id, name, state);
+                    userStory.Priority = priotity;
+                    userStory.Complexity = complexity;
+                    userStory.Description = description;
+                    userStories.Add(userStory);
+                }
+            }
+            dr.Close();
+
+            foreach (UserStory userStory in userStories)
+            {
+                // Fetching userStories comments
+                userStory.Comments = FetchUserStoryComments(userStory.Id);
+
+                // Fetching userStories assignees
+                userStory.Assignees = FetchUserStoryAssignees(userStory.Id);
+            }
+
+            return userStories;
+        }
+
         public List<Comment> FetchUserStoryComments(int userStoryId)
         {
             List<Comment> comments = new List<Comment>();
             string sql = $"" +
                 $"SELECT usm.id as comment_id, usm.description, date, m.id as member_id, m.role, users.id as user_id, users.lastname, users.firstname " +
                 $"FROM userstorycomment usm, member m, users " +
-                $"WHERE userstory_id={userStoryId} and member_id=m.id and users.id = m.user_id;";
+                $"WHERE userstory_id={userStoryId} and member_id=m.id and users.id = m.user_id " +
+                $"ORDER BY usm.date DESC;";
             MySqlDataReader dr = Database.ExecutQuery(sql);
             if (dr.HasRows)
             {
@@ -144,13 +185,19 @@ namespace pr74_scrum_app.Controller
             Database.Begin();
 
             if (userStory.Id < 1) userStory.Id = GenerateNewId(USER_STORIES_TABLE);
-            
+
             // basics
-            string sql = $"" +
+            string sql = sprintId != -1 ? $"" +
                 $"INSERT INTO {USER_STORIES_TABLE} (id, name, description, complexity, priority, state, sprint_id, project_id) " +
                 $"VALUES ({userStory.Id}, '{userStory.Name}', '{userStory.Description}',{userStory.Complexity},{userStory.Priority}, '{userStory.State}', {sprintId}, {projectId}) " +
                 $"ON DUPLICATE KEY " + 
-                $"UPDATE description = '{userStory.Description}', name = '{userStory.Name}', complexity = {userStory.Complexity}, priority = {userStory.Priority}, state= '{userStory.State}', sprint_id={sprintId}, project_id={projectId} ; ";
+                $"UPDATE description = '{userStory.Description}', name = '{userStory.Name}', complexity = {userStory.Complexity}, priority = {userStory.Priority}, state= '{userStory.State}', sprint_id={sprintId}, project_id={projectId} ; "
+                : $"" +
+                $"INSERT INTO {USER_STORIES_TABLE} (id, name, description, complexity, priority, state, project_id) " +
+                $"VALUES ({userStory.Id}, '{userStory.Name}', '{userStory.Description}',{userStory.Complexity},{userStory.Priority}, '{userStory.State}', {projectId}) " +
+                $"ON DUPLICATE KEY " +
+                $"UPDATE description = '{userStory.Description}', name = '{userStory.Name}', complexity = {userStory.Complexity}, priority = {userStory.Priority}, state= '{userStory.State}', project_id={projectId} ; ";
+            ;
             MySqlDataReader dr = Database.ExecutQuery(sql);
             if (dr.RecordsAffected < 0)
             {
@@ -191,7 +238,7 @@ namespace pr74_scrum_app.Controller
 
             string sql = $"" +
                 $"INSERT INTO {COMMENTS_TABLE} (id, description, date, member_id, userstory_id)" +
-                $"VALUES ({comment.Id}, '{comment.Content}', '{comment.Date.ToString("yyyy/MM/dd")}',{comment.ByMember.Id},{userStoryId}) " +
+                $"VALUES ({comment.Id}, '{comment.Content}', '{comment.Date.ToString("yyyy/MM/dd HH:mm:ss")}',{comment.ByMember.Id},{userStoryId}) " +
                 $"ON DUPLICATE KEY " +
                 $"UPDATE description = '{comment.Content}', date = '{comment.Date.ToString("yyyy/MM/dd")}';";
             MySqlDataReader dr = Database.ExecutQuery(sql);
@@ -283,7 +330,14 @@ namespace pr74_scrum_app.Controller
             {
                 while (dr.Read())
                 {
-                    sprintProjectIds.Add((int)dr["sprint_id"]);
+                    if (!Convert.IsDBNull(dr["sprint_id"]))
+                    {
+                        sprintProjectIds.Add((int)dr["sprint_id"]);
+                    }
+                    else
+                    {
+                        sprintProjectIds.Add(-1);
+                    }
                     sprintProjectIds.Add((int)dr["Project_id"]);
                 }
             }

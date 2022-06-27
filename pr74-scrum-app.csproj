@@ -103,7 +103,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ProjectController.cs" />
     <Compile Include="Controller\SidebarController.cs" />
+    <Compile Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.Designer.cs">
+      <DependentUpon>ArchiveProjectConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\ConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\ConfirmationForm.Designer.cs">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\DisplayMemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\DisplayMemberInfo.Designer.cs">
+      <DependentUpon>DisplayMemberInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.Designer.cs">
+      <DependentUpon>RemoveMemberFromProjectConfirmationPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddFeatureToBacklogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddFeatureToBacklogForm.Designer.cs">
+      <DependentUpon>AddFeatureToBacklogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewSprintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewSprintForm.Designer.cs">
+      <DependentUpon>AddNewSprintForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewMemberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectViewSubForms\AddNewMemberForm.Designer.cs">
+      <DependentUpon>AddNewMemberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\Controller.cs" />
     <Compile Include="Controller\SprintController.cs" />
     <Compile Include="Controller\UserController.cs" />
@@ -127,6 +170,12 @@
     </Compile>
     <Compile Include="View\Components\Separator.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProjectForm.Designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Components\SideBar.cs">
       <SubType>Component</SubType>
@@ -181,6 +230,31 @@
     <Compile Include="View\SprintForm.Designer.cs">
       <DependentUpon>SprintForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ProjectViewSubForms\ArchiveProjectConfirmationForm.resx">
+      <DependentUpon>ArchiveProjectConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\ConfirmationForm.resx">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\DisplayMemberInfo.resx">
+      <DependentUpon>DisplayMemberInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\RemoveMemberFromProjectConfirmationPopUp.resx">
+      <DependentUpon>RemoveMemberFromProjectConfirmationPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\AddFeatureToBacklogForm.resx">
+      <DependentUpon>AddFeatureToBacklogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\AddNewMemberForm.resx">
+      <DependentUpon>AddNewMemberForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="View\Components\UserStoryPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="View\UserStoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProfilForm.resx">
       <DependentUpon>ProfilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProjectViewSubForms\AddNewSprintForm.resx">
+      <DependentUpon>AddNewSprintForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>
@@ -404,6 +481,7 @@
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\THIRD-PARTY-NOTICES.TXT" />
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\useSharedDesignerContext.txt" />
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\version.txt" />
+    <Content Include="Ressources\user.png" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>

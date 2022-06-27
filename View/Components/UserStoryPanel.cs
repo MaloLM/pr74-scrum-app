@@ -50,7 +50,8 @@ namespace pr74_scrum_app.View
             content.LinkColor = System.Drawing.Color.Black;
             content.Location = new System.Drawing.Point(31, 3);
             content.Name = "userStory_"+userStory.Id;
-            content.Size = new System.Drawing.Size(140, 45);
+            content.Size = new System.Drawing.Size(120, 45); 
+            content.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             content.TabIndex = 0;
             content.TabStop = true;
             content.Text = userStory.Name;

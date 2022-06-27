@@ -69,5 +69,34 @@ namespace pr74_scrum_app.Controller
             Database.Commit();
             return true;
         }
+        public bool ArchiverSprint(Sprint sprint)
+        {
+            Database.Begin();
+            MySqlDataReader dr;
+            foreach (UserStory userStory in sprint.Backlog.UserStories)
+            {
+                dr = Database.ExecutQuery($"UPDATE {USER_STORIES_TABLE} SET sprint_id = null WHERE sprint_id={sprint.Id}");
+                if (dr.RecordsAffected < 0)
+                {
+                    Database.Rollback();
+                    dr.Close();
+                    return false;
+                }
+                dr.Close();
+            }
+
+            dr = Database.ExecutQuery($"DELETE FROM {SPRINTS_TABLE} where id={sprint.Id}");
+            if(dr.RecordsAffected < 0)
+            {
+                Database.Rollback();
+                dr.Close();
+                return false;
+            }
+            dr.Close();
+
+            Database.Commit();
+
+            return true;
+        }
     }
 }

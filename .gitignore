@@ -11,6 +11,8 @@ App.config
 .htm
 packages.config
 
+UpgradeLog*
+
 # dependencies
 /node_modules
 .vs/
